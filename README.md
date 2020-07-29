@@ -8,7 +8,7 @@
 - Установлен Webpack для оптимизации картинок и шрифтов.
 - CSS-код минимизирован, проставлены вендорные префиксы.
 - JS разбит на модули и переведён бабелем из ES6 в ES5.
-- Сайт открывается в интернете по адресу: [gisma87.github.io/11sprint/](https://gisma87.github.io/11sprint/)
+- Сайт открывается в интернете по адресу: **[gisma87.github.io/04_sprint11_Mesto/](https://gisma87.github.io/04_sprint11_Mesto/)**
 * * * * *
 
 - Можно добавлять карточки
@@ -28,7 +28,7 @@
 *Подготовка к работе*
 
 1. Проверьте наличие установленного node.js и npm
-2. Скопируйте проект на компьютер: git clone https://github.com/gisma87/11sprint.git
+2. Скопируйте проект на компьютер: git clone https://github.com/gisma87/04_sprint11_Mesto.git
 3. Установите зависимости: npm install
 
 ---
