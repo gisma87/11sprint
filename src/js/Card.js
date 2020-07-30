@@ -54,6 +54,7 @@ export class Card {
     const placeCardImage = fragment.querySelector('.place-card__image');
     const placeCardName = fragment.querySelector('.place-card__name');
     const likeCount = fragment.querySelector('.place-card__like-count');
+
     likeCount.setAttribute('data-id', this.cardId);
     likeCount.textContent = this.likeCounter.length;
     placeCardImage.style.backgroundImage = `url(${this.link})`;

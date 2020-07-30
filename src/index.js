@@ -9,6 +9,7 @@ import {PopupImage} from './js/PopupImage.js';
 import {PopupProfile} from './js/PopupProfile.js';
 import {UserInfo} from './js/UserInfo.js';
 
+const buttonsMoreCards = document.querySelector('.places-list__button');
 const container = document.querySelector('.places-list');
 const userPhoto = document.querySelector('.user-info__photo');
 const errorMessages = {
@@ -22,7 +23,7 @@ const userInfoJob = document.querySelector('.user-info__job');
 const popupProfileNode = document.querySelector('#popupProfile');
 new FormValidator(popupNewCard.querySelector('form'), errorMessages);
 new FormValidator(popupProfileNode.querySelector('form'), errorMessages);
-const cardList = new CardList(container);
+const cardList = new CardList(container, buttonsMoreCards);
 const api = new Api({
     baseUrl: 'https://praktikum.tk/cohort10',
     headers: {
@@ -37,11 +38,11 @@ function getInitialCards() {
         .then(result => {
             // в cardsFilter убираю трёх спамеров, наплодили 50 пустых карточек
             const cardsFilter = result.filter(item => {
-                return (item.owner._id !== '8e5308053b2657893352cde6' && item.owner._id !=='23a40bc402fd00844fffe55d' && item.owner._id !== '1efaef5b38d89184686eacbe');
+                return (item.owner._id !== '8e5308053b2657893352cde6' && item.owner._id !== '23a40bc402fd00844fffe55d' && item.owner._id !== '1efaef5b38d89184686eacbe');
             });
             const cards = cardsFilter.map(item => {
-                    const oneCard = new Card(item.name, item.link, item._id, item.likes, userInfo.idUser, item.owner._id, api);
-                    return oneCard.create();
+                const oneCard = new Card(item.name, item.link, item._id, item.likes, userInfo.idUser, item.owner._id, api);
+                return oneCard.create();
             });
             cardList.render(cards);
         })

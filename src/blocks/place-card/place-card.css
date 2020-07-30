@@ -5,9 +5,34 @@
 @import url(__like-icon/place-card__like-icon.css);
 @import url(__likes/place-card__likes.css);
 
-.place-card {
-  width: 282px;
-  background-color: #fff;
-  border-radius: 10px;
-  min-height: 360px;
+@keyframes fadeInLeft{
+    0% {
+        opacity: 0;
+
+        transform: translateY(400px);
+    }
+    60% {
+
+        transform: translateY(-30px);
+    }
+    80% {
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
 }
+
+.place-card {
+    width: 282px;
+    background-color: #fff;
+    border-radius: 10px;
+    min-height: 360px;
+    opacity: 0;
+    animation-name: fadeInLeft;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}
+
