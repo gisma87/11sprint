@@ -39,6 +39,7 @@ export class Card {
       this.api.cardDel(likeCount.dataset.id)
           .then(() => {
             const placeCard = likeCount.closest('.place-card');
+            const container = placeCard.parentNode;
             container.removeChild(placeCard);
           })
           .catch((err) => {

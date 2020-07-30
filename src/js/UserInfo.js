@@ -41,7 +41,7 @@ export class UserInfo {
         }
     }
     updateUser(name, about) {
-        api.updateUserInfo(name, about)
+        this.api.updateUserInfo(name, about)
             .then(result => {
                 this.userInfoDefault(result.name, result.about)
                 this.form.reset();

@@ -1,11 +1,12 @@
 import {Popup} from './Popup.js';
 export class PopupCard extends Popup{
-    constructor(popupName, createCard, api) {
+    constructor(popupName, createCard, api, userInfo) {
         super();
 
         this.buttonOpen = document.querySelector('.user-info__button');
         this.createCard = createCard;
         this.api = api;
+        this.userInfo = userInfo;
         this.popupName = popupName;
         this.form = this.popupName.querySelector('form');
         this.buttonPopupCard = this.form.querySelector('.popup__button');
@@ -32,7 +33,7 @@ export class PopupCard extends Popup{
     createCardApi(name, link) {
         this.api.createCard(name, link)
             .then(result => {
-                this.createCard(result.name, result.link, result._id, result.likes, userInfo.idUser, result.owner._id, this.api)
+                this.createCard(result.name, result.link, result._id, result.likes, this.userInfo.idUser, result.owner._id, this.api)
                 this.form.reset();
                 this.popupName.classList.remove('popup_is-opened');
             })

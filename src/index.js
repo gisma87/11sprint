@@ -54,7 +54,7 @@ function createCard(name, link, cardId, likeCounter, idUser, idOwner, api) {
 
 const userInfo = new UserInfo(popupProfileNode, [userInfoName, userInfoJob], api, userPhoto);
 
-const popupCard = new PopupCard(popupNewCard, createCard, api);
+const popupCard = new PopupCard(popupNewCard, createCard, api, userInfo);
 new PopupProfile(popupProfileNode, userInfo);
 
 const imageContainer = document.querySelector('#popupImage');
