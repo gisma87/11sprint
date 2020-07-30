@@ -1,5 +1,4 @@
 import "./style.css";
-import {Popup} from './js/Popup.js';
 import {Api} from './js/Api.js';
 import {Card} from './js/Card.js';
 import {CardList} from './js/CardList.js';
@@ -36,9 +35,13 @@ const api = new Api({
 function getInitialCards() {
     api.getInitialCards()
         .then(result => {
-            const cards = result.map(item => {
-                const oneCard = new Card(item.name, item.link, item._id, item.likes, userInfo.idUser, item.owner._id, api);
-                return oneCard.create();
+            // в cardsFilter убираю трёх спамеров, наплодили 50 пустых карточек
+            const cardsFilter = result.filter(item => {
+                return (item.owner._id !== '8e5308053b2657893352cde6' && item.owner._id !=='23a40bc402fd00844fffe55d' && item.owner._id !== '1efaef5b38d89184686eacbe');
+            });
+            const cards = cardsFilter.map(item => {
+                    const oneCard = new Card(item.name, item.link, item._id, item.likes, userInfo.idUser, item.owner._id, api);
+                    return oneCard.create();
             });
             cardList.render(cards);
         })

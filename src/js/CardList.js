@@ -3,7 +3,7 @@ export class CardList {
         this.container = container;
     }
     addCard(domCard) {
-        this.container.appendChild(domCard);
+        this.container.prepend(domCard);
     }
     render(cards) {
         cards.forEach(function (item) {
