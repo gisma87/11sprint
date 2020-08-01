@@ -1,4 +1,4 @@
-.places-list__button {
+.buttons-nav__show-more-cards {
     outline: none;
     display: none;
     background: #FFF;
@@ -6,12 +6,7 @@
     border-radius: 80px;
     height: 64px;
     width: 288px;
-    font-family: 'Roboto Regular', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 24px;
-    cursor: pointer;
+
     margin: 64px auto 0;
 
     position: relative;
@@ -19,13 +14,13 @@
     transition: all 1s ease 0s;
 }
 
-.places-list__button:hover {
+.buttons-nav__show-more-cards:hover {
     top: -10px;
     transition: all 0.5s ease 0.2s;
     box-shadow: 0 5px 0 0 #957B8D;
 }
 
-.places-list__button:active {
+.buttons-nav__show-more-cards:active {
     top: -7px;
     transition: all 0.1s ease 0s;
     box-shadow: 0 2px 0 0 #957B8D;

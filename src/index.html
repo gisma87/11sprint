@@ -41,7 +41,10 @@
         </template>
         <!-- конец примера. -->
     </div>
-    <button type="button" class="places-list__button">Показать ещё</button>
+    <div class="buttons-nav">
+        <a href="#" title="наверх" class="buttons-nav__up"> > </a>
+        <button type="button" class="buttons-nav__show-more-cards">Показать ещё</button>
+    </div>
     <div class="popup" id="popupNewPlace">
         <div class="popup__content">
             <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close"/>

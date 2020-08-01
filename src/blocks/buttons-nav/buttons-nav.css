@@ -1,0 +1,13 @@
+@import "./__up/buttons-nav__up.css";
+@import "./__show-more-cards/buttons-nav__show-more-cards.css";
+
+.buttons-nav {
+    font-family: 'Roboto Regular', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    cursor: pointer;
+    position: relative;
+    padding: 15px;
+}

@@ -5,7 +5,7 @@
 @import url(__like-icon/place-card__like-icon.css);
 @import url(__likes/place-card__likes.css);
 
-@keyframes fadeInLeft{
+@keyframes fadeInUp{
     0% {
         opacity: 0;
 
@@ -31,8 +31,8 @@
     border-radius: 10px;
     min-height: 360px;
     opacity: 0;
-    animation-name: fadeInLeft;
-    animation-duration: 2s;
+    animation-name: fadeInUp;
+    animation-duration: 1s;
     animation-fill-mode: both;
 }
 

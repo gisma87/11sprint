@@ -1,0 +1,20 @@
+@keyframes bounce{
+    0% {
+        top: 25px
+    }
+
+    100% {
+        top: 35px
+    }
+}
+
+.buttons-nav__up {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-90deg) scale(2, 4);
+    text-decoration: none;
+    color: #fff;
+    animation: bounce 1s alternate infinite;
+    padding: 0 10px;
+}

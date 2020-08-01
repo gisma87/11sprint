@@ -9,7 +9,7 @@ import {PopupImage} from './js/PopupImage.js';
 import {PopupProfile} from './js/PopupProfile.js';
 import {UserInfo} from './js/UserInfo.js';
 
-const buttonsMoreCards = document.querySelector('.places-list__button');
+const buttonsMoreCards = document.querySelector('.buttons-nav__show-more-cards');
 const container = document.querySelector('.places-list');
 const userPhoto = document.querySelector('.user-info__photo');
 const errorMessages = {
@@ -44,7 +44,8 @@ function getInitialCards() {
                 const oneCard = new Card(item.name, item.link, item._id, item.likes, userInfo.idUser, item.owner._id, api);
                 return oneCard.create();
             });
-            cardList.render(cards);
+            const reverseCards = cards.reverse();
+            cardList.render(reverseCards);
         })
         .catch((err) => {
             console.log(err);
@@ -53,7 +54,7 @@ function getInitialCards() {
 
 function createCard(name, link, cardId, likeCounter, idUser, idOwner, api) {
     const newCard = new Card(name, link, cardId, likeCounter, idUser, idOwner, api);
-    cardList.addCard(newCard.create());
+    cardList.addCard(newCard.create(), 1);
 }
 
 const userInfo = new UserInfo(popupProfileNode, [userInfoName, userInfoJob], api, userPhoto);

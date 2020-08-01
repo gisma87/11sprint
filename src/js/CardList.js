@@ -5,8 +5,10 @@ export class CardList {
         this.lastCard = 0;
         this.buttonsMoreCards = buttonsMoreCards;
     }
-    addCard(domCard) {
-        this.container.appendChild(domCard);
+    addCard(domCard, prepend = 0) {
+        if(prepend) {
+            this.container.prepend(domCard);
+        } else this.container.appendChild(domCard);
     }
     // render(cards) {
     //     cards.forEach(function (item) {
